@@ -21,9 +21,8 @@ export function Navbar({ onOpenDemoModal }: NavbarProps) {
 
   const navLinks = [
     { name: "Platform", href: "/#meet-presso" },
-    { name: "Use Cases", href: "/campaign-ideas" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Campaign Library", href: "/campaign-ideas" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 
