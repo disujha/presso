@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle2, Sparkles } from "lucide-react";
 import { db } from "@/lib/firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -36,9 +37,11 @@ export function Navbar({ onOpenDemoModal }: NavbarProps) {
         }`}
       >
         <Link href="/" className="flex items-center gap-3 group">
-          <img
+          <Image
             src="/images/icon.png"
             alt="PRESSO Logo"
+            width={28}
+            height={28}
             className="w-7 h-7 object-contain group-hover:scale-105 transition-transform duration-300"
           />
           <span className="font-display font-bold text-[17px] tracking-widest text-white">

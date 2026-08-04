@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -79,11 +80,13 @@ export function ProductSection() {
                     : "border-white/[.06] hover:border-white/20"
                 }`}
               >
-                <div className="w-full flex items-center justify-center" style={{ height: "56px" }}>
-                  <img
+                <div className="w-full flex items-center justify-center relative" style={{ height: "56px" }}>
+                  <Image
                     src={v.image}
                     alt={v.label}
-                    className="max-h-full max-w-full object-contain opacity-75"
+                    fill
+                    sizes="80px"
+                    className="object-contain opacity-75"
                   />
                 </div>
                 <span className={`text-[9px] font-mono uppercase tracking-wider hidden lg:block ${active === idx ? "text-[#FF6A00]" : "text-[#666666]"}`}>

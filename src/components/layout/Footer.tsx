@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUp, Mail } from "lucide-react";
 
 export function Footer() {
@@ -33,9 +34,11 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 src="/images/icon.png"
                 alt="PRESSO Logo"
+                width={28}
+                height={28}
                 className="w-7 h-7 object-contain"
               />
               <span className="font-display font-bold text-[17px] tracking-widest text-white">PRESSO</span>
