@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2, Sparkles, Send, Building, Mail, User, Phone } from "lucide-react";
+import { db } from "@/lib/firebase/config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -13,13 +15,29 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      company: formData.get("company"),
+      phone: formData.get("phone"),
+      message: formData.get("message") || "",
+      createdAt: serverTimestamp(),
+    };
+
+    try {
+      await addDoc(collection(db, "demoRequests"), data);
       setSubmitted(true);
-    }, 1000);
+    } catch (error) {
+      console.error("Error submitting demo request:", error);
+      alert("Failed to schedule demo. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
@@ -94,6 +112,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                     <div className="relative">
                       <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666666]" />
                       <input
+                        name="name"
                         type="text"
                         required
                         placeholder="Alex Morgan"
@@ -109,6 +128,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                     <div className="relative">
                       <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666666]" />
                       <input
+                        name="email"
                         type="email"
                         required
                         placeholder="alex@agency.com"
@@ -125,6 +145,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       <div className="relative">
                         <Building className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666666]" />
                         <input
+                          name="company"
                           type="text"
                           required
                           placeholder="Experiential Co."
@@ -140,6 +161,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       <div className="relative">
                         <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#666666]" />
                         <input
+                          name="phone"
                           type="tel"
                           required
                           placeholder="+1 (555) 019-2834"
@@ -154,6 +176,7 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
                       Upcoming Campaign / Project Details
                     </label>
                     <textarea
+                      name="message"
                       rows={3}
                       placeholder="Tell us about your upcoming exhibition, activation, or event..."
                       className="w-full px-4 py-3 bg-[#1A1A1A] border border-white/10 rounded-xl text-sm text-white placeholder:text-[#555555] focus:outline-none focus:border-[#FF6A00] transition-colors resize-none"
