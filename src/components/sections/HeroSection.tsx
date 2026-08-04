@@ -21,7 +21,7 @@ export function HeroSection({ onOpenDemoModal, onOpenVideoModal, onOpenBrochureM
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center pt-32 pb-24 overflow-hidden bg-[#050505]"
+      className="relative min-h-[85vh] flex items-center justify-center pt-32 pb-12 overflow-hidden bg-[#050505]"
     >
       {/* Radial Hero Lighting — very subtle */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-radial-hero pointer-events-none opacity-70" />
