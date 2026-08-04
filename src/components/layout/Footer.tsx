@@ -45,11 +45,18 @@ export function Footer() {
               The programmable interactive engagement platform that transforms ordinary physical spaces into competitive, measurable brand experiences.
             </p>
 
-            <div className="space-y-1 text-[12px] text-[#555] font-mono leading-[1.7]">
-              <p className="text-[#888] font-medium">Rethela Technology</p>
-              <p>WeWork NESCO IT Park, Building 4, North Wing</p>
-              <p>Western Express Hwy, Goregaon</p>
-              <p>Mumbai 400063</p>
+            <div className="space-y-3 text-[12px] text-[#B8B8B8] font-mono leading-[1.6]">
+              <div>
+                <p className="text-white font-semibold uppercase tracking-wider text-[10px] mb-0.5">Corporate Office</p>
+                <p>reThela Technology Pvt Ltd</p>
+                <p>WeWork NESCO IT Park, Building 4, North Wing</p>
+                <p>Western Express Hwy, Goregaon, Mumbai 400063</p>
+              </div>
+              <div className="pt-2 border-t border-white/[.06]">
+                <p className="text-white font-semibold uppercase tracking-wider text-[10px] mb-0.5">Registered Office</p>
+                <p>301, Shreeshyam Apartment, 1/16 Mirpara Road</p>
+                <p>Liluah, Howrah 711203</p>
+              </div>
             </div>
           </div>
 

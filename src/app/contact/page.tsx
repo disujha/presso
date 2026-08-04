@@ -77,13 +77,23 @@ export default function Contact() {
                                         <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-industrial-200 flex items-center justify-center flex-shrink-0">
                                             <MapPin className="w-6 h-6 text-presso" />
                                         </div>
-                                        <div>
-                                            <h4 className="font-bold">Visit Our Regd. Office</h4>
-                                            <p className="text-industrial-500 text-sm leading-relaxed">
-                                                reThela Technology Pvt Ltd<br />
-                                                301, Shreeshyam Apartment, 1/16 Mirpara Road,<br />
-                                                Liluah, Howrah 711203
-                                            </p>
+                                        <div className="space-y-4">
+                                            <div>
+                                                <h4 className="font-bold text-base text-industrial-900">Corporate Office</h4>
+                                                <p className="text-industrial-500 text-sm leading-relaxed">
+                                                    reThela Technology Pvt Ltd<br />
+                                                    WeWork NESCO IT Park, Building 4, North Wing<br />
+                                                    Western Express Hwy, Goregaon, Mumbai 400063
+                                                </p>
+                                            </div>
+                                            <div className="pt-3 border-t border-industrial-200">
+                                                <h4 className="font-bold text-base text-industrial-900">Registered Office</h4>
+                                                <p className="text-industrial-500 text-sm leading-relaxed">
+                                                    reThela Technology Pvt Ltd<br />
+                                                    301, Shreeshyam Apartment, 1/16 Mirpara Road,<br />
+                                                    Liluah, Howrah 711203
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
