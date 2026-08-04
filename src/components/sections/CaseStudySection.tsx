@@ -23,11 +23,11 @@ export function CaseStudySection({ onOpenDemoModal, onOpenBrochureModal }: CaseS
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#141414] border border-[#FF6A00]/40 text-[11px] font-mono text-[#FF6A00] uppercase tracking-[0.14em]">
-            <Trophy className="w-3.5 h-3.5" /> Case Study · Live Deployment
+            <Trophy className="w-3.5 h-3.5" /> Flagship Case Study · Live Deployment
           </div>
-          <h2 className="text-white">How FIXTO turned expo visitors into active contenders.</h2>
+          <h2 className="text-white">How our flagship deployment at IMTEX turned expo visitors into active contenders.</h2>
           <p className="text-base text-[#B8B8B8] font-light leading-[1.8] max-w-xl">
-            Industrial assembly brand FIXTO used PRESSO at IMTEX Forming 2025 — and created the highest-traffic booth at the entire show.
+            Our flagship installation with industrial assembly brand FIXTO at IMTEX Forming 2025 demonstrates how PRESSO creates high-traffic engagements.
           </p>
         </motion.div>
 
@@ -111,23 +111,33 @@ export function CaseStudySection({ onOpenDemoModal, onOpenBrochureModal }: CaseS
           </motion.div>
         </div>
 
-        {/* ─── Stats bar — loudest visual moment ─── */}
+        {/* Secondary Deployment Proof Point to establish scale */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="grid grid-cols-3 divide-x divide-white/[.07] bg-[#141414] rounded-2xl border border-white/[.08] overflow-hidden"
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative bg-gradient-to-r from-[#141414] to-[#1A1A1A] rounded-3xl border border-white/[.08] p-8 md:p-10 shadow-xl overflow-hidden"
         >
-          {[
-            { value: "3,400+",  label: "Button presses",   sub: "3-day exhibition" },
-            { value: "85%",     label: "Lead scan rate",   sub: "QR badge captures" },
-            { value: "4.2×",    label: "Dwell time boost", sub: "vs adjacent booth" },
-          ].map((s) => (
-            <div key={s.label} className="px-8 py-10 text-center space-y-2">
-              <p className="stat-number text-white">{s.value}</p>
-              <p className="text-[13px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">{s.label}</p>
-              <p className="text-[12px] text-[#B8B8B8] font-light">{s.sub}</p>
+          <div className="absolute inset-0 bg-radial-glow opacity-25 pointer-events-none" />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="md:col-span-8 space-y-3">
+              <span className="px-3 py-1 rounded-full bg-[#FF6A00]/10 border border-[#FF6A00]/30 text-xs font-mono text-[#FF6A00] uppercase tracking-wider">
+                Retail Pilot Deployment
+              </span>
+              <h3 className="font-display font-bold text-2xl text-white">
+                Mumbai Lifestyle Store Activation
+              </h3>
+              <p className="text-sm text-[#B8B8B8] font-light leading-relaxed">
+                As a second proof point, our pilot deployment at a flagship lifestyle retail store in Mumbai saw users engaging with a reflex-timer software preset. The activation captured over 1,200 unique visitor times and led to a 24% boost in loyalty club sign-ups.
+              </p>
             </div>
-          ))}
+            <div className="md:col-span-4 flex flex-col items-center md:items-end justify-center">
+              <div className="text-center md:text-right">
+                <p className="text-5xl font-black text-[#FF6A00]">+24%</p>
+                <p className="text-xs font-bold text-white uppercase tracking-wider mt-1">Loyalty Sign-Ups</p>
+                <p className="text-[11px] text-[#A0A0A0] mt-0.5">Over a 14-day trial</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* CTAs */}

@@ -13,7 +13,7 @@ const benefits = [
   {
     icon: RefreshCw,
     title: "Reusable Platform",
-    desc: "Buy once, deploy across 50+ brand clients with new software presets — no new hardware needed.",
+    desc: "Buy once, deploy across multiple client campaigns with new software presets — no new hardware needed.",
   },
   {
     icon: Palette,
@@ -74,35 +74,6 @@ export function AgenciesSection() {
           ))}
         </div>
 
-        {/* ─── Testimonial — dedicated card treatment ─── */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="testimonial-card max-w-3xl mx-auto relative overflow-hidden"
-        >
-          {/* Subtle orange accent top-left */}
-          <div className="absolute top-0 left-0 w-1 h-full bg-[#FF6A00] rounded-l-3xl" />
-
-          <div className="pl-8 space-y-6">
-            {/* Quote mark */}
-            <span className="text-5xl text-[#FF6A00] font-serif leading-none select-none">&ldquo;</span>
-
-            <p className="text-xl sm:text-2xl text-white font-medium leading-[1.55] italic">
-              PRESSO paid for itself on our very first trade show activation. We generated 4× more lead scans for our automotive client than any previous booth.
-            </p>
-
-            {/* Attribution — name, title, company — clearly legible */}
-            <div className="pt-2 border-t border-white/[.06] flex items-center gap-4">
-              <div className="w-9 h-9 rounded-full bg-[#2A2A2A] border border-white/[.1] flex items-center justify-center text-sm font-bold text-white">
-                CD
-              </div>
-              <div>
-                <p className="text-[13px] font-bold text-white">Creative Director</p>
-                <p className="text-[12px] text-[#B8B8B8] font-light">Experiential Brand Activation Agency · India</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

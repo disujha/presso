@@ -20,12 +20,12 @@ const cards = [
 
 export function WhatIsPressoSection() {
   return (
-    <section className="section-pad bg-[#0A0A0A] border-t border-white/[.06]">
+    <section className="py-14 md:py-20 bg-[#0A0A0A] border-t border-white/[.06]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-14">
 
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="max-w-2xl space-y-3">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#666] font-medium">What is PRESSO</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0] font-semibold">What is PRESSO</p>
           <h2 className="text-white">One platform. Six connected systems.</h2>
           <p className="text-base text-[#B8B8B8] leading-[1.8] font-light max-w-lg">
             PRESSO converts any physical challenge into a timed, competitive, measurable brand experience — no app downloads, no special gear.

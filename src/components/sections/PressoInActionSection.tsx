@@ -29,7 +29,7 @@ export function PressoInActionSection({ onOpenVideoModal }: PressoInActionSectio
 
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="max-w-xl space-y-3">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#666] font-medium">PRESSO in Action</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0] font-semibold">PRESSO in Action</p>
           <h2 className="text-white">See it working at a live exhibition.</h2>
           <p className="text-base text-[#B8B8B8] font-light leading-[1.8]">
             Fixto at IMTEX Forming 2025. Real deployment, real crowd, real numbers.
@@ -48,7 +48,7 @@ export function PressoInActionSection({ onOpenVideoModal }: PressoInActionSectio
               <div className="w-14 h-14 rounded-full border border-white/[.1] flex items-center justify-center">
                 <svg className="w-5 h-5 fill-[#666] ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               </div>
-              <p className="text-sm text-[#555] font-light">Fixto · IMTEX Forming · Bangalore 2025</p>
+              <p className="text-sm text-[#888888] font-light">Fixto · IMTEX Forming · Bangalore 2025</p>
             </div>
           ) : (
             <>
@@ -56,7 +56,7 @@ export function PressoInActionSection({ onOpenVideoModal }: PressoInActionSectio
                 src="/videos/presso_demo.mp4"
                 autoPlay muted loop playsInline preload="metadata"
                 onError={() => setHasVideoError(true)}
-                className="w-full h-full object-cover brightness-90"
+                className="w-full h-full object-cover brightness-105 hover:brightness-115 transition-all duration-700"
               />
               {/* Gradient so bottom text is readable against any video frame */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent pointer-events-none" />
@@ -70,7 +70,7 @@ export function PressoInActionSection({ onOpenVideoModal }: PressoInActionSectio
 
               {/* Label */}
               <div className="absolute bottom-5 left-6">
-                <p className="text-[11px] font-mono text-white/60 uppercase tracking-[0.12em]">Fixto · IMTEX Forming · Bangalore 2025</p>
+                <p className="text-[11px] font-mono text-white/80 uppercase tracking-[0.12em]">Fixto · IMTEX Forming · Bangalore 2025</p>
               </div>
 
               {/* Watch full video CTA */}
@@ -87,15 +87,26 @@ export function PressoInActionSection({ onOpenVideoModal }: PressoInActionSectio
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="grid grid-cols-3 divide-x divide-white/[.07] bg-[#141414] rounded-2xl border border-white/[.08] overflow-hidden"
+          className="relative bg-gradient-to-r from-[#111111] via-[#161616] to-[#111111] rounded-3xl border border-[#FF6A00]/25 shadow-[0_0_50px_rgba(255,106,0,0.1)] p-8 md:p-12 overflow-hidden"
         >
-          {stats.map((s) => (
-            <div key={s.label} className="px-8 py-10 text-center space-y-2">
-              <p className="stat-number text-white">{s.value}</p>
-              <p className="text-[13px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">{s.label}</p>
-              <p className="text-[12px] text-[#B8B8B8] font-light">{s.sub}</p>
-            </div>
-          ))}
+          {/* Internal ambient radial glow */}
+          <div className="absolute inset-0 bg-radial-glow opacity-30 pointer-events-none" />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 relative z-10 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center justify-center text-center px-4 py-6 md:py-4">
+                <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-gradient-gold tracking-tight leading-none">
+                  {s.value}
+                </span>
+                <span className="text-[14px] font-bold text-[#FF6A00] uppercase tracking-wider mt-2">
+                  {s.label}
+                </span>
+                <span className="text-[12px] text-[#B8B8B8] font-light mt-1">
+                  {s.sub}
+                </span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

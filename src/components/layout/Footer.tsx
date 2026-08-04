@@ -78,9 +78,9 @@ export function Footer() {
             <div className="space-y-5">
               <div className="space-y-1.5">
                 <p className="text-[11px] text-[#555] font-mono uppercase tracking-[0.1em]">Sales</p>
-                <a href="mailto:sunil@presso.live" className="flex items-center gap-2 text-[13px] text-[#B8B8B8] hover:text-white transition-colors duration-200">
+                <a href="mailto:sales@presso.live" className="flex items-center gap-2 text-[13px] text-[#B8B8B8] hover:text-white transition-colors duration-200">
                   <Mail className="w-3.5 h-3.5 text-[#FF6A00] flex-shrink-0" />
-                  sunil@presso.live
+                  sales@presso.live
                 </a>
               </div>
               <div className="space-y-1.5">

@@ -43,7 +43,7 @@ export function VideoGallerySection({ onOpenVideoModal, onOpenDemoModal, onOpenB
   ];
 
   return (
-    <section className="relative py-32 bg-[#050505] overflow-hidden border-t border-white/10">
+    <section className="relative section-pad bg-[#050505] overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-16">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -95,22 +95,16 @@ export function VideoGallerySection({ onOpenVideoModal, onOpenDemoModal, onOpenB
         </div>
 
         {/* Section CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-8 border-t border-white/10">
+        <div className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-white/10">
           <button
             onClick={onOpenDemoModal}
-            className="px-6 py-3 rounded-full bg-[#FF6A00] text-black font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(255,106,0,0.4)] hover:shadow-[0_0_35px_rgba(255,106,0,0.7)] transition-all flex items-center gap-2"
+            className="btn-primary scale-105"
           >
             Request Live Demo <ArrowRight className="w-4 h-4" />
           </button>
           <button
-            onClick={onOpenDemoModal}
-            className="px-6 py-3 rounded-full bg-[#1A1A1A] border border-white/15 text-white font-bold text-xs uppercase tracking-wider hover:border-[#FF6A00] hover:text-[#FF6A00] transition-all"
-          >
-            Book Online Demo
-          </button>
-          <button
             onClick={onOpenBrochureModal}
-            className="px-6 py-3 rounded-full bg-white/5 border border-white/10 text-[#B0B0B0] font-bold text-xs uppercase tracking-wider hover:text-white transition-all flex items-center gap-2"
+            className="btn-secondary"
           >
             Download Brochure <Download className="w-4 h-4" />
           </button>

@@ -8,8 +8,16 @@ export function InteractiveDemoSection() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [bestTime, setBestTime] = useState<number | null>(null);
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const [pressCount, setPressCount] = useState(4829);
+  const [pressCount, setPressCount] = useState(148290);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Increment pressCount dynamically every few seconds to simulate real-time presses globally
+    const interval = setInterval(() => {
+      setPressCount((prev) => prev + Math.floor(Math.random() * 2) + 1);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
 
   // Leaderboard data
   const [leaderboard] = useState([
@@ -205,7 +213,7 @@ export function InteractiveDemoSection() {
               {/* Footer Instruction Bar */}
               <div className="w-full pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#B0B0B0] relative z-10">
                 <span className="flex items-center gap-1 font-mono text-[11px]">
-                  <Flame className="w-3.5 h-3.5 text-[#FF6A00]" /> Total Presses Today: {pressCount.toLocaleString()}
+                  <Flame className="w-3.5 h-3.5 text-[#FF6A00]" /> Total Simulator Presses: {pressCount.toLocaleString()}
                 </span>
                 {bestTime && (
                   <span className="font-mono text-[#FFC107] font-bold">

@@ -19,11 +19,11 @@ const rows = [
 
 export function StopwatchComparisonSection() {
   return (
-    <section className="section-pad bg-[#0A0A0A] border-t border-white/[.06]">
+    <section className="py-14 md:py-20 bg-[#0A0A0A] border-t border-white/[.06]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
 
         <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="max-w-xl space-y-3">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#666] font-medium">Why PRESSO</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0] font-semibold">Why PRESSO</p>
           <h2 className="text-white">A stopwatch is not an experience.</h2>
           <p className="text-base text-[#B8B8B8] font-light leading-[1.8]">
             Brands use phone timers because nothing better existed. Until now.
@@ -34,8 +34,8 @@ export function StopwatchComparisonSection() {
           <table className="w-full text-left min-w-[540px]">
             <thead>
               <tr className="border-b border-white/[.08]">
-                <th className="pb-5 text-[11px] font-mono text-[#555] uppercase tracking-[0.12em] w-1/3">Feature</th>
-                <th className="pb-5 text-[11px] font-mono text-[#555] uppercase tracking-[0.12em] w-1/3">Phone Stopwatch</th>
+                <th className="pb-5 text-[11px] font-mono text-[#888888] uppercase tracking-[0.12em] w-1/3">Feature</th>
+                <th className="pb-5 text-[11px] font-mono text-[#888888] uppercase tracking-[0.12em] w-1/3">Phone Stopwatch</th>
                 <th className="pb-5 text-[11px] font-mono text-[#FF6A00] uppercase tracking-[0.12em] w-1/3">PRESSO</th>
               </tr>
             </thead>
@@ -48,7 +48,7 @@ export function StopwatchComparisonSection() {
                   className="group"
                 >
                   <td className="py-5 text-sm text-[#B8B8B8] font-medium">{row.feature}</td>
-                  <td className="py-5 text-sm text-[#444] font-light line-through decoration-[#2A2A2A]">{row.stopwatch}</td>
+                  <td className="py-5 text-sm text-[#666666] font-light line-through decoration-[#3A3A3A]">{row.stopwatch}</td>
                   <td className="py-5 text-sm text-white font-semibold group-hover:text-[#FF6A00] transition-colors duration-200">{row.presso}</td>
                 </motion.tr>
               ))}

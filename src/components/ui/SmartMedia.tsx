@@ -106,7 +106,7 @@ export function SmartMedia({
           loop={loop}
           playsInline
           onError={handleError}
-          className={`w-full h-full object-cover transition-transform duration-700 ${
+          className={`w-full h-full object-cover transition-all duration-700 brightness-105 hover:brightness-115 ${
             hoverZoom ? "group-hover:scale-105" : ""
           }`}
         />
@@ -122,12 +122,12 @@ export function SmartMedia({
     );
   }
 
-  // Image Renderer — uses native img with object-contain for product shots, fill for scene photos
+  // Image Renderer — uses native img with object-cover for detail presentation, fill for scene photos
   return (
     <div
       onClick={onClick}
-      className={`relative w-full ${aspectClasses} overflow-hidden bg-transparent ${
-        glowEffect ? "hover:opacity-95" : ""
+      className={`relative w-full ${aspectClasses} overflow-hidden rounded-3xl bg-[#141414] border border-white/10 ${
+        glowEffect ? "hover:border-[#FF6A00]/50 hover:shadow-[0_0_30px_rgba(255,106,0,0.25)]" : ""
       } transition-all duration-500 group ${className}`}
     >
       <Image
@@ -137,7 +137,7 @@ export function SmartMedia({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         onLoad={() => setIsLoaded(true)}
         onError={handleError}
-        className={`object-contain transition-all duration-700 ${
+        className={`object-cover transition-all duration-700 brightness-105 hover:brightness-115 ${
           isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
         } ${hoverZoom ? "group-hover:scale-105" : ""}`}
       />

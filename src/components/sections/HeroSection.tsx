@@ -36,49 +36,49 @@ export function HeroSection({ onOpenDemoModal, onOpenVideoModal, onOpenBrochureM
           className="space-y-8"
         >
           <div className="space-y-6">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-[#888888] font-medium">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0] font-semibold">
               Interactive Engagement Platform
             </p>
             <h1 className="font-display font-bold text-[clamp(2.8rem,5.5vw,5rem)] text-white leading-[1.05] tracking-[-0.03em]">
               Turn product demos into live competitions.
             </h1>
-            <p className="text-lg text-[#666666] leading-[1.8] max-w-md font-light">
+            <p className="text-lg text-[#B8B8B8] leading-[1.8] max-w-md font-light">
               PRESSO transforms any physical challenge into a timed, competitive and unforgettable brand experience.
             </p>
           </div>
 
           {/* Trust badges — minimal */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.1em] text-[#555555] uppercase font-medium">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.1em] text-[#888888] uppercase font-medium">
             <span>Live deployment</span>
-            <span className="text-[#333333]">·</span>
+            <span className="text-[#444444]">·</span>
             <span>Working hardware</span>
-            <span className="text-[#333333]">·</span>
+            <span className="text-[#444444]">·</span>
             <span>Fully customizable</span>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-6 pt-2">
+            <button
+              onClick={onOpenDemoModal}
+              className="flex items-center gap-2 px-8 py-4 rounded-full bg-[#FF6A00] text-black font-extrabold text-[12px] uppercase tracking-[0.14em] hover:bg-orange-500 transition-all duration-300 shadow-[0_0_40px_rgba(255,106,0,0.45)] hover:scale-105"
+            >
+              Book Live Demo
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
             <button
               onClick={onOpenVideoModal}
-              className="flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#FF6A00] text-black font-bold text-[11px] uppercase tracking-[0.12em] hover:bg-orange-500 transition-colors duration-300 shadow-[0_0_30px_rgba(255,106,0,0.35)]"
+              className="flex items-center gap-2.5 px-8 py-4 rounded-full border border-white/20 text-white font-bold text-[12px] uppercase tracking-[0.12em] hover:border-white/50 hover:bg-white/5 transition-all duration-300"
             >
-              <Play className="w-3.5 h-3.5 fill-current" />
+              <Play className="w-4 h-4 fill-current" />
               Watch Demo
             </button>
 
             <button
-              onClick={onOpenDemoModal}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-full border border-white/15 text-white text-[11px] font-bold uppercase tracking-[0.12em] hover:border-white/40 transition-colors duration-300"
-            >
-              Book Live Demo
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-
-            <button
               onClick={onOpenBrochureModal}
-              className="flex items-center gap-2 text-[11px] text-[#555555] hover:text-[#888888] transition-colors uppercase tracking-[0.1em] font-medium"
+              className="flex items-center gap-2 text-[12px] text-[#A8A8A8] hover:text-white transition-colors uppercase tracking-[0.12em] font-bold border-b border-transparent hover:border-white pb-0.5 ml-2"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-4 h-4" />
               Agency Deck
             </button>
           </div>
@@ -110,7 +110,7 @@ export function HeroSection({ onOpenDemoModal, onOpenVideoModal, onOpenBrochureM
                   src="/videos/presso_demo.mp4"
                   autoPlay muted loop playsInline preload="metadata"
                   onError={() => setHasVideoError(true)}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover brightness-105 hover:brightness-115 transition-all duration-700"
                 />
                 {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />

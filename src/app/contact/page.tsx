@@ -57,7 +57,7 @@ export default function Contact() {
                                         </div>
                                         <div className="space-y-1">
                                             <h4 className="font-bold">Sales & Technical Queries</h4>
-                                            <p className="text-industrial-500 font-mono text-sm">sunil@presso.live</p>
+                                            <p className="text-industrial-500 font-mono text-sm">sales@presso.live</p>
                                             <h4 className="font-bold pt-2">Device & Post-Sales Support</h4>
                                             <p className="text-industrial-500 font-mono text-sm">hello@presso.live</p>
                                         </div>

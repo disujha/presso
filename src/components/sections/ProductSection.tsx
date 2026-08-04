@@ -20,16 +20,16 @@ export function ProductSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="meet-presso" className="py-40 bg-[#050505] border-t border-white/[.05]">
+    <section id="meet-presso" className="section-pad bg-[#050505] border-t border-white/[.05]">
       <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-20">
 
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.7 }} className="max-w-xl space-y-3">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-[#555555] font-medium">The Hardware</p>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[#A0A0A0] font-semibold">The Hardware</p>
           <h2 className="font-display font-bold text-[clamp(2rem,4vw,3.5rem)] text-white leading-[1.08]">
             Meet PRESSO.
           </h2>
-          <p className="text-base text-[#555555] font-light leading-[1.8]">
+          <p className="text-base text-[#B8B8B8] font-light leading-[1.8]">
             Designed for exhibitions, retail and live brand activations.
           </p>
         </motion.div>
@@ -62,8 +62,8 @@ export function ProductSection() {
 
             {/* Caption */}
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-              <p className="text-[11px] text-[#333] font-light leading-snug max-w-xs">{views[active].desc}</p>
-              <span className="text-[10px] font-mono text-[#2a2a2a] uppercase tracking-widest">{views[active].label} view</span>
+              <p className="text-[11px] text-[#B8B8B8] font-light leading-snug max-w-xs">{views[active].desc}</p>
+              <span className="text-[10px] font-mono text-[#888888] uppercase tracking-widest">{views[active].label} view</span>
             </div>
           </motion.div>
 
@@ -86,7 +86,7 @@ export function ProductSection() {
                     className="max-h-full max-w-full object-contain opacity-75"
                   />
                 </div>
-                <span className={`text-[9px] font-mono uppercase tracking-wider hidden lg:block ${active === idx ? "text-[#FF6A00]" : "text-[#333]"}`}>
+                <span className={`text-[9px] font-mono uppercase tracking-wider hidden lg:block ${active === idx ? "text-[#FF6A00]" : "text-[#666666]"}`}>
                   {v.label}
                 </span>
               </button>

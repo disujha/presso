@@ -43,19 +43,19 @@ export function OnePlatformBrandedSection() {
   ];
 
   return (
-    <section className="relative py-32 bg-[#050505] overflow-hidden border-t border-white/10">
+    <section className="relative section-pad bg-[#050505] overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-16">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#111111] border border-[#FF6A00]/40 text-xs font-mono text-[#FF6A00] uppercase tracking-widest">
-            <RefreshCw className="w-3.5 h-3.5" /> Reusable Agency Platform
+            <RefreshCw className="w-3.5 h-3.5" /> Illustrative Brand Applications
           </div>
           <h2 className="font-display font-bold text-4xl sm:text-6xl text-white tracking-tight">
             ONE PLATFORM. <br />
-            <span className="text-gradient-gold">ENDLESS BRANDS.</span>
+            <span className="text-gradient-gold">CONCEPT RENDERS.</span>
           </h2>
-          <p className="text-lg text-[#B0B0B0] font-light max-w-xl mx-auto leading-relaxed">
-            Same Hardware. Different Branding. Different Software. Unlimited Campaigns.
+          <p className="text-lg text-[#B8B8B8] font-light max-w-xl mx-auto leading-relaxed">
+            Same Hardware. Custom Skins. Brand-Specific Software. Unlimited Campaigns.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function OnePlatformBrandedSection() {
               className={`px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider transition-all duration-300 ${
                 activeBrand === idx
                   ? "bg-[#FF6A00] text-black shadow-[0_0_25px_rgba(255,106,0,0.5)] scale-105"
-                  : "bg-[#111111] border border-white/10 text-[#B0B0B0] hover:text-white"
+                  : "bg-[#111111] border border-white/10 text-[#B8B8B8] hover:text-white"
               }`}
             >
               {brand.name}
@@ -80,7 +80,7 @@ export function OnePlatformBrandedSection() {
         <div className="rounded-4xl bg-[#111111] border border-white/10 p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center shadow-2xl relative overflow-hidden">
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#FFC107]">
-              Client Mockup: {brands[activeBrand].name}
+              Concept Render: {brands[activeBrand].name}
             </div>
 
             <h3 className="font-display font-bold text-3xl sm:text-4xl text-white">
