@@ -26,7 +26,7 @@ export default function Contact() {
         };
 
         try {
-            await addDoc(collection(db, "inquiries"), data);
+            await addDoc(collection(db, "enquiries"), data);
             setSubmitted(true);
         } catch (error) {
             console.error("Error submitting inquiry:", error);
