@@ -55,9 +55,11 @@ export default function Contact() {
                                         <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-industrial-200 flex items-center justify-center flex-shrink-0">
                                             <Mail className="w-6 h-6 text-presso" />
                                         </div>
-                                        <div>
-                                            <h4 className="font-bold">Email Us</h4>
-                                            <p className="text-industrial-500">support@presso.live</p>
+                                        <div className="space-y-1">
+                                            <h4 className="font-bold">Sales & Technical Queries</h4>
+                                            <p className="text-industrial-500 font-mono text-sm">sunil@presso.live</p>
+                                            <h4 className="font-bold pt-2">Device & Post-Sales Support</h4>
+                                            <p className="text-industrial-500 font-mono text-sm">hello@presso.live</p>
                                         </div>
                                     </div>
 

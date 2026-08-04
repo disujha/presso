@@ -3,36 +3,198 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 17, 24, 39;
-  --background-start-rgb: 249, 250, 251;
-  --background-end-rgb: 243, 244, 246;
+  --background: #0A0A0A;
+  --foreground: #ffffff;
+  --body-text: #B8B8B8;
+  --muted-text: #666666;
+  --panel-bg: #141414;
+  --panel-border: rgba(255,255,255,0.08);
 }
 
-@layer base {
-  body {
-    @apply bg-industrial-50 text-industrial-900;
-  }
+html {
+  background-color: #0A0A0A;
+  color: #ffffff;
+  font-family: var(--font-inter), sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display font-semibold tracking-tight;
+body {
+  background-color: #0A0A0A;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #FF6A00;
+  color: #0A0A0A;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* ─── 3-Tier Type Scale ─── */
+/* H1: hero — fluid clamp handled inline */
+/* H2: section headers */
+h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-weight: 800;
+}
+h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-weight: 700;
+}
+h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  font-weight: 700;
+}
+/* Body copy — #B8B8B8 on dark */
+p, li {
+  color: #B8B8B8;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Section rhythm — standardized ─── */
+.section-pad {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 
-@layer components {
-  .container-wide {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20;
-  }
-
-  .clip-path-slant {
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  }
+/* ─── Ambient Glow Utilities ─── */
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 106, 0, 0.1) 0%, transparent 65%);
 }
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 106, 0, 0.16) 0%, rgba(255, 193, 7, 0.04) 40%, transparent 70%);
+}
+
+/* ─── Panel card — slightly lighter than #0A0A0A for text sections ─── */
+.glass-card {
+  background: rgba(20, 20, 20, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(255, 106, 0, 0.3);
+  box-shadow: 0 0 40px -8px rgba(255, 106, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* ─── Text Gradients ─── */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FF6A00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FF6A00 0%, #FFC107 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── CTA Buttons — standard sizing ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #FF6A00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 0 32px rgba(255, 106, 0, 0.4);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: #ff7a1a;
+  box-shadow: 0 0 48px rgba(255, 106, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ─── Stats band ─── */
+.stat-number {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ─── Interactive Demo highlight ─── */
+.demo-frame {
+  border: 1px solid rgba(255, 106, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(255,106,0,0.1), 0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ─── Hardware button glows ─── */
+.presso-button-shadow {
+  box-shadow: 0 0 60px 10px rgba(255, 106, 0, 0.5), inset 0 0 20px 2px rgba(255, 193, 7, 0.6);
+}
+
+.presso-button-active-shadow {
+  box-shadow: 0 0 100px 30px rgba(255, 106, 0, 0.85), inset 0 0 35px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* ─── Testimonial card ─── */
+.testimonial-card {
+  background: #141414;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 24px;
+  padding: 48px;
+}
+
+/* ─── Float animation ─── */
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float-subtle { animation: float-subtle 7s ease-in-out infinite; }

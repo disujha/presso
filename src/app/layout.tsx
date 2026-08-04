@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Work_Sans } from "next/font/google";
-import { AuthProvider } from "@/lib/firebase/auth";
+import { Inter, Space_Grotesk } from "next/font/google";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,14 +8,14 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const workSans = Work_Sans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-work-sans",
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
-  title: "Presso | Industrial Energy Intelligence",
-  description: "Industrial energy intelligence platform for steel and manufacturing. Retrofit sensors and real-time monitoring.",
+  title: "PRESSO | Programmable Interactive Engagement Platform",
+  description: "Transform ordinary events into unforgettable physical interactions. Illuminated button hardware, intelligent software & customizable workflows.",
   icons: {
     icon: "/images/favicon.png",
   },
@@ -27,11 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${workSans.variable} font-sans bg-industrial-50 text-industrial-900 antialiased`}>
-        <AuthProvider>
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-[#050505] text-white antialiased selection:bg-[#FF6A00] selection:text-[#050505]`}>
+        <SmoothScroll>
           {children}
-        </AuthProvider>
+        </SmoothScroll>
       </body>
     </html>
   );
